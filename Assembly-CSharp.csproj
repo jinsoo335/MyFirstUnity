@@ -57,7 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Player\PlayerController.cs" />
-    <Compile Include="Assets\Player\bullet.cs" />
+    <Compile Include="Assets\Player\Bullet.cs" />
+    <Compile Include="Assets\example\ClassExample.cs" />
+    <Compile Include="Assets\example\MethodExample.cs" />
+    <Compile Include="Assets\example\ObjectExample.cs" />
+    <Compile Include="Assets\example\constructorExample.cs" />
+    <Compile Include="Assets\example\AcessModifierExample.cs" />
+    <Compile Include="Assets\example\PropertyExample.cs" />
+    <Compile Include="Assets\example\InheritanceExample.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
