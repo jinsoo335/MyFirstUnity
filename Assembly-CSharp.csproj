@@ -57,14 +57,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Player\PlayerController.cs" />
-    <Compile Include="Assets\Player\Bullet.cs" />
     <Compile Include="Assets\example\ClassExample.cs" />
+    <Compile Include="Assets\example\PropertyExample.cs" />
+    <Compile Include="Assets\example\AcessModifierExample.cs" />
     <Compile Include="Assets\example\MethodExample.cs" />
+    <Compile Include="Assets\example\TypeConversoinExample.cs" />
     <Compile Include="Assets\example\ObjectExample.cs" />
     <Compile Include="Assets\example\constructorExample.cs" />
-    <Compile Include="Assets\example\AcessModifierExample.cs" />
-    <Compile Include="Assets\example\PropertyExample.cs" />
+    <Compile Include="Assets\Player\Bullet.cs" />
     <Compile Include="Assets\example\InheritanceExample.cs" />
+    <Compile Include="Assets\example\MethodExample1.cs" />
+    <Compile Include="Assets\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Player\Player.cs" />
+    <Compile Include="Assets\Enemy\Enemy1.cs" />
+    <Compile Include="Assets\Enemy\Enemy2.cs" />
+    <Compile Include="Assets\SpawnManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -55,11 +55,14 @@ public class ClassExample : MonoBehaviour
  *      -> 메서드 : 매개변수에 입력값을 전달했을 때 본문 코드를 실행하고 변환값을 반환한다.
  */
 
+
+
+
 class Human
 {
-    private string name;
-    private float height;
-    private int age;
+    protected string name;  
+    protected float height;
+    protected int age;
 
     public Human()
     {
@@ -117,21 +120,25 @@ class Human
         name = value;
     }
 
+   
 
-
-
-    public Human(string _name, float _height, int _age)  
+    public Human(string name, float height, int age)  
     {
-        name = _name;
-        height = _height;
-        age = _age;
+        this.name = name;
+        this.height = height;
+        this.age = age;
     }
 
     public void Eat()
     {
         Debug.Log("eat!");
     }
-    public void Walk()
+    public void Eat(string something)
+    {
+        Debug.Log("eat!" + something);
+    }
+
+    public virtual void Walk()
     {
         Debug.Log("walk!");
     }
