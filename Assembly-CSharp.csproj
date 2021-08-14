@@ -61,17 +61,28 @@
     <Compile Include="Assets\example\PropertyExample.cs" />
     <Compile Include="Assets\example\AcessModifierExample.cs" />
     <Compile Include="Assets\example\MethodExample.cs" />
+    <Compile Include="Assets\Managers\SpawnManager.cs" />
     <Compile Include="Assets\example\TypeConversoinExample.cs" />
     <Compile Include="Assets\example\ObjectExample.cs" />
     <Compile Include="Assets\example\constructorExample.cs" />
-    <Compile Include="Assets\Player\Bullet.cs" />
-    <Compile Include="Assets\example\InheritanceExample.cs" />
     <Compile Include="Assets\example\MethodExample1.cs" />
+    <Compile Include="Assets\Player\Bullet.cs" />
+    <Compile Include="Assets\Enemy\Enemy2.cs" />
     <Compile Include="Assets\Enemy\Enemy.cs" />
+    <Compile Include="Assets\example\InheritanceExample.cs" />
     <Compile Include="Assets\Player\Player.cs" />
     <Compile Include="Assets\Enemy\Enemy1.cs" />
-    <Compile Include="Assets\Enemy\Enemy2.cs" />
-    <Compile Include="Assets\SpawnManager.cs" />
+    <Compile Include="Assets\example\AbstractExample.cs" />
+    <Compile Include="Assets\example\InterfaceExample.cs" />
+    <Compile Include="Assets\example\StructExample.cs" />
+    <Compile Include="Assets\example\StructAssignment.cs" />
+    <Compile Include="Assets\example\NameSpaceExample.cs" />
+    <Compile Include="Assets\example\IndexerExample.cs" />
+    <Compile Include="Assets\example\EnumExample.cs" />
+    <Compile Include="Assets\Item\Item.cs" />
+    <Compile Include="Assets\Item\Coin.cs" />
+    <Compile Include="Assets\Item\SpeedUp.cs" />
+    <Compile Include="Assets\Managers\ItemManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
