@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -6,8 +7,8 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        
-        SpawnRandom();
+        EventManager.EnemyDieEvent += OnEnemyDie;
+        //SpawnRandom();
 
         //SpawnEnemy(EnemyPrefab1, new Vector3(-1, 1, 0));
         //SpawnEnemy(EnemyPrefab2, new Vector3(1, 1, 0));
@@ -30,17 +31,20 @@ public class SpawnManager : MonoBehaviour
         //}
 
     }
-    void SpawnRandom()
+
+    public IEnumerator SpawnRandom()
     {
-        GameObject prefab = EnemyPrefabs[Random.Range(0, EnemyPrefabs.Length)];
-        Points points = new Points();
-        Vector2 pos = points[Random.Range(0, points.GetLength())].GetPos();
+        while (true)    // 계속 반복됨
+        {
+            GameObject prefab = EnemyPrefabs[Random.Range(0, EnemyPrefabs.Length)];
+            Points points = new Points();
+            Vector2 pos = points[Random.Range(0, points.GetCount())].GetPos();
 
-        SpawnEnemy(prefab, pos);
-        Invoke("SpawnRandom", 1.0f);
+            SpawnEnemy(prefab, pos);
+            yield return new WaitForSeconds(1.0f);  //  제어권이 호출한 곳으로 넘어갔다가 1.0f 초 후에 다시 제어권을 찾아옴
+
+        }
     }
-
-
 
     void SpawnEnemy(GameObject prefab, Vector3 position)
     {
@@ -48,6 +52,16 @@ public class SpawnManager : MonoBehaviour
         enemy.transform.position = position;
         enemy.GetComponent<Enemy>().Move();
 
+    }
+
+    void OnEnemyDie()
+    {
+        float x = Random.Range(-3.0f, 3.0f);
+        float y = Random.Range(-5.0f, 5.0f);
+        Point point = new Point(x, y);
+
+        Points.points.Add(point);
+        Debug.Log(Points.points.Count);
     }
 
 }

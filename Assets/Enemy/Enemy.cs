@@ -49,6 +49,7 @@ public class Enemy : MonoBehaviour      // MonoBehaviour를 상속받는 클래스의 객�
 
     void Die()
     {
+        EventManager.RunEnemyDieEvent();
         Destroy(gameObject);    // 자기 자신을 없애라!
     }
 

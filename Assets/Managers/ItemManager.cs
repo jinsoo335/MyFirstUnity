@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ItemManager : MonoBehaviour
 {
@@ -7,7 +9,7 @@ public class ItemManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnRandom();
+        //SpawnRandom();
 
         //GameObject CoinPrefab = GetItem(Items.Coin);
 
@@ -32,15 +34,18 @@ public class ItemManager : MonoBehaviour
         item.transform.position = pos;
     }
 
-    void SpawnRandom()
+    public IEnumerator SpawnRandom()
     {
-        GameObject prefab = ItemPrefabs[Random.Range(0, ItemPrefabs.Length)];
-        Points points = new Points();
-        Vector2 pos = points[Random.Range(0, points.GetLength())].GetPos();
+        while (true)
+        {
+            GameObject prefab = ItemPrefabs[Random.Range(0, ItemPrefabs.Length)];
+            Vector2 pos = Points.points[Random.Range(0, Points.points.Count)].GetPos();
 
-        SpawnItem(prefab, pos);
-        Invoke("SpawnRandom", 1.0f);
+            SpawnItem(prefab, pos);
+            yield return new WaitForSeconds(1.0f);
+        }
     }
+ 
 }
 
 
@@ -53,7 +58,7 @@ enum Items
 
 class Points
 {
-    public Point[] points =
+    public static List<Point> points = new List<Point>
     {
         new Point(0, 0),
         new Point(1, 0),
@@ -77,9 +82,9 @@ class Points
             points[index] = value;
         }
     }
-    public int GetLength()
+    public int GetCount()
     {
-        return points.Length;
+        return points.Count;
     }
 }
 
@@ -87,10 +92,10 @@ class Points
 
 public struct Point
 {
-    int x;
-    int y;
+    float x;
+    float y;
 
-    public Point(int x, int y)
+    public Point(float x, float y)
     {
         this.x = x;
         this.y = y;
